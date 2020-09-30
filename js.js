@@ -1,29 +1,38 @@
-function Apple(weight) {
-    this.weight = weight;
-
-    this.getWeight = function () {
-        return this.weight;
+class Apple{
+    constructor(weight) {
+        this.weight = weight;
+    }
+    getWeight() {
+        if ( this.weight == 0 ) {
+            console.log("Hết táo rồi! ");
+        }
     }
 }
-function Human(name, gender, weight) {
-    this.name = name;
-    this.gender = gender;
-    this.weight = weight;
-    this.saySomething = function (text) {
+class Human {
+    constructor(name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+    }
+
+    saySomething(text) {
         console.log(text);
     };
-    this.eatApple = function (apple) {
-        if (apple.weight  > 0){
-            apple.weight --;
+
+    eatApple(apple) {
+        if (apple.weight > 0) {
+            apple.weight--;
             this.weight++;
-            console.log(this.name + " cắn 1 miếng! ")
+            console.log(this.name + " cắn 1 miếng! ");
         }
 
     };
-    this.getName = function () {
+
+    getName() {
         return this.name;
     };
-    this.getWeight = function () {
+
+    getWeight() {
         return this.weight;
     };
 }
@@ -38,6 +47,5 @@ let a = apple.getWeight();
 
     }
 
-if (apple.weight == 0) {
-    console.log("Hết táo !");
-}
+apple.getWeight() ;
+
